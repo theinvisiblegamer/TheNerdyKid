@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="favcon2.ico" type="image/x-icon" id="favicon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+		.header {
+			font-size: 5.5em;
+            font-weight: bold;
+		}
+		
+        p:first-of-type {
+            font-size: 3em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        p:last-of-type {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .idea {
+            background-color: #ececec;
+            color: #000000;
+            font-size: 1.5em;
+            border: 0.5px solid #ffffff;
+            transition: box-shadow 0.7s;
+        }
+
+        .idea:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            width: 150px;
+            margin-bottom: 20px;
+            height: 150px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.6s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button img {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .button span {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+		.subtitle {
+			text-align: center;
+		}
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        function makeDod() {
+            emailjs.init("U6bd1Q13fwcg7Ns_A");
+            let userMessage = prompt("Enter your prompt:");
+            
+            if (!userMessage) {
+                window.alert("User cancelled the prompt.");
+                return;
+            }
+
+            const templateParams = {
+                message: userMessage, 
+            };
+
+            emailjs.send('service_138xyu7', 'template_nw56dfz', templateParams)
+                .then(response => {
+                    window.alert("Prompt sent successfully! Check \"Suggestions etc.\" for the status.");
+                    console.log("EmailJS response:", response);
+                })
+                .catch(error => {
+                    console.error("EmailJS error:", error);
+                    window.alert("Failed to register prompt. Please try again.");
+                });
+        }
+    </script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'e') {
+                document.title = "Leibniz Formula for π - Math Geeks";
+                document.getElementById('favicon').href = 'favicon.ico';
+            } else if (event.key === 'q') {
+                window.location.href = "https://classroom.google.com";
+            }
+        });
+
+        function openURL(URL) {
+            var win = window.open();
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = URL;
+            win.document.body.appendChild(iframe);
+        }
+		function openDev() {
+			openURL("https://ENTER YOUR WEBSITE NAME HERE/dev")
+		}
+        function openDino() {
+            openURL("https://binbashbanana.github.io");
+        }
+        function openMC() {
+            openURL("https://theult1mateh4ck3r.github.io/games/");
+        }
+        function openMonGG() {
+            openURL("https://theult1mateh4ck3r.github.io/mathematics");
+        }
+        function openBidoof() {
+            openURL("https://hackersforli123fe.github.io/pical/");
+        }
+        function openSlope() {
+            openURL("https://hackersforli123fe.github.io/pical/slope/");
+        }
+        function openNeal() {
+            openURL("https://neal.fun/");
+        }
+        function openSug() {
+            openURL("https://spew45.github.io");
+        }
+	function openClass() {
+            openURL("https://classroom.google.com");
+    </script>
+</head>
+<body>
+    <div class="header">TheNerdyKid</div>
+
+    <div class="container">
+        <a href="https://spew45.github.io" class="button" target="_blank" onclick="openDino()">
+            <img src="images/Spew45.jpeg" alt="Chrome Dino">
+            <span>Spew45</span>
+        </a>
+
+        <a href="https://classroom.google.com" class="button" target="_blank" onclick="openClass()">
+            <img src="images/Classroom.png" alt="Classroom">
+            <span>Classroom</span>
+        </a>
+
+        <a href="https://theult1mateh4ck3r.github.io/games" class="button" target="_blank" onclick="openMC()">
+            <img src="images/mc.png" alt="Eaglecraft">
+            <span>Eaglecraft</span>
+        </a>
+
+        <a href="https://theult1mateh4ck3r.github.io/mathematics" class="button" target="_blank" onclick="openMonGG()">
+            <img src="images/monkeygg2.png" alt="MonkeyGG2">
+            <span>MonkeyGG2</span>
+        </a>
+	
+	<a href="https://bidoofery.github.io" class="button" target="_blank" onclick="openBidoof()">
+            <img src="images/bidoofery.png" alt="MonkeyGG2">
+            <span>Bidoofery</span>
+        </a>
+	    
+        <a href="https://hackersforli123fe.github.io/pical/slope/" class="button" target="_blank" onclick="openSlope()">
+            <img src="images/slope.png" alt="Slope">
+            <span>Slope</span>
+        </a>
+
+        <a href="https://neal.fun" class="button" target="_blank">
+            <img src="images/neal.png" alt="neal.fun">
+            <span>neal.fun</span>
+        </a>
+	    
+	<a href="https://doesitfitinpockets.github.io" class="button" target="_blank">
+            <img src="images/monkeygg2.png" alt="PassionFruit">
+            <span>PassionFruit</span>
+        </a>
+	    
+	<a href="https://chatgpt.com" class="button" target="_blank">
+            <img src="images/ChatGPT.jpeg" alt="ChatGPT">
+            <span>ChatGPT</span>
+        </a>
+	<a href="https://binbashbanana.github.io/gfiles/list.html" class="button" target="_blank">
+            <img src="images/BinBash.jpeg" alt="BinBash">
+            <span>BinBashBanana</span>
+        </a> 
+    </div>
+
+    <button class="idea" onclick="makeDod()">Click to add an idea or update</button>
+
+    <div class="subtitle">V1.11.4<br>Reborn!</div>
+</body>
+</html>
